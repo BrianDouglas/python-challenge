@@ -16,5 +16,14 @@ with open(poll_path) as poll_file:
         else:
             poll_data[row[2]] = 1
 
-print(sum(poll_data.values()))    
-print(poll_data)
+total_votes = sum(poll_data.values())
+
+print("Election Results")
+print("---------------------------------")
+print("Total Votes: {}".format(total_votes))
+print("---------------------------------")
+for candidate in poll_data:
+    print("{}: {:.3f}% ({})".format(candidate, 100*(poll_data[candidate]/total_votes), poll_data[candidate]))
+print("---------------------------------")
+print("Winner: {}".format(max(poll_data, key=poll_data.get)))
+print("---------------------------------")
