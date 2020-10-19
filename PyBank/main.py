@@ -12,8 +12,6 @@ with open(budget_path) as budget_file:
 
     for row in budget_reader:
         budget_data.append((row[0], int(row[1])))
-        if int(row[1]) < -2000000:
-            print(f"found one {row[0]}")
 
 #initialize tabulation variables    
 total_months = len(budget_data)
