@@ -38,7 +38,7 @@ for i in range(1,len(budget_data)):
 print("Financial Analysis")
 print("-------------------------------")
 print(f"Total Months: {total_months}")
-print(f"Total: ${total_monies}")
+print("Total: ${:,}".format(total_monies))
 print("Average Change: ${:,.2f}".format(sum(changes)/len(changes)))
 print("Greatest Increase in Profits: {} (${:,})".format(greatest_increase[0], greatest_increase[1]))
 print("Greatest Decrease in Profits: {} (${:,})".format(greatest_decrease[0], greatest_decrease[1]))
