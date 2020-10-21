@@ -27,3 +27,17 @@ for candidate in poll_data:
 print("---------------------------------")
 print("Winner: {}".format(max(poll_data, key=poll_data.get)))
 print("---------------------------------")
+
+
+output_path = os.path.join("analysis", "output.txt")
+f = open(output_path, "w")
+
+f.write("Election Results\n")
+f.write("---------------------------------\n")
+f.write("Total Votes: {}\n".format(total_votes))
+f.write("---------------------------------\n")
+for candidate in poll_data:
+    f.write("{}: {:.3f}% ({})\n".format(candidate, 100*(poll_data[candidate]/total_votes), poll_data[candidate]))
+f.write("---------------------------------\n")
+f.write("Winner: {}\n".format(max(poll_data, key=poll_data.get)))
+f.write("---------------------------------\n")

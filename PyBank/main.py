@@ -42,4 +42,16 @@ print("Total: ${:,}".format(total_monies))
 print("Average Change: ${:,.2f}".format(sum(changes)/len(changes)))
 print("Greatest Increase in Profits: {} (${:,})".format(greatest_increase[0], greatest_increase[1]))
 print("Greatest Decrease in Profits: {} (${:,})".format(greatest_decrease[0], greatest_decrease[1]))
-print("done")
+
+output_path = os.path.join("analysis", "output.txt")
+f = open(output_path, "w")
+
+f.write("Financial Analysis\r")
+f.write("-------------------------------\r")
+f.write(f"Total Months: {total_months}\r")
+f.write("Total: ${:,}\r".format(total_monies))
+f.write("Average Change: ${:,.2f}\r".format(sum(changes)/len(changes)))
+f.write("Greatest Increase in Profits: {} (${:,})\r".format(greatest_increase[0], greatest_increase[1]))
+f.write("Greatest Decrease in Profits: {} (${:,})".format(greatest_decrease[0], greatest_decrease[1]))
+
+f.close()
