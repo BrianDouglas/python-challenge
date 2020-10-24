@@ -41,3 +41,5 @@ for candidate in poll_data:
 f.write("---------------------------------\n")
 f.write("Winner: {}\n".format(max(poll_data, key=poll_data.get)))
 f.write("---------------------------------\n")
+
+f.close()
